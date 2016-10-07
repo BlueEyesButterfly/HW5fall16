@@ -23,7 +23,15 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   # your scenario here
+  When I have opted to see movies rated: "G, PG, PG-13, R"
+  And I press link "Movie Title"
+  Then I should see "Aladdin" before "Amelie"
+  And I should see "Chocolat" before "The Terminator"
+  And I should see "The Help" before "The Incredibles"
 
 Scenario: sort movies in increasing order of release date
   # your scenario here
-
+  When I have opted to see movies rated: "G, PG, PG-13, R"
+  And I press link "Release Date"
+  Then I should see "1968-04-06" before "1984-10-26"
+  And I should see "1984-10-26" before "1989-07-21"
